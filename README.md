@@ -34,3 +34,10 @@ Please verify the package names for your distribution of choise
 - `python3` for execution
 - `tar` for archived backup saves
 - `xz` for backup compression support
+
+## Learn more about the project
+- Report bugs [here](https://github.com/EarthlySkies/kura5-savehelper/labels/bug), but check 
+[this](https://github.com/EarthlySkies/kura5-savehelper/issues/new/choose) first to avoid duplicates
+- Suggest features [here](https://github.com/EarthlySkies/kura5-savehelper/labels/enhancement), but check 
+[this](https://github.com/EarthlySkies/kura5-savehelper/issues/new/choose) first to avoid duplicates
+- See who made this project possible in the  [credits](https://github.com/EarthlySkies/kura5-savehelper/blob/main/AUTHORS.md)
