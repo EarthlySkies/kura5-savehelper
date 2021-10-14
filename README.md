@@ -1,4 +1,6 @@
-This helper aims to allow users to avoid the hassle of manual save management. It is written in Python, runs under Python 3 and aims to be cross-platform compatible. The project is open-source software, so feel free to use, copy, modify and redistribute this software under the license terms.
+This helper aims to allow users to avoid the hassle of manual save management for [Kura5](https://chickenhat.itch.io/kura5-bonds-of-the-undying). 
+It is written in Python, runs under Python 3 and aims to be cross-platform compatible. 
+The project is open-source software, so feel free to use, copy, modify and redistribute this software under the license terms.
 
 # Installation and usage
 1. Download the latest release from the [releases page](https://github.com/EarthlySkies/kura5-savehelper/releases)
