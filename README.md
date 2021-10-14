@@ -36,6 +36,7 @@ Please verify the package names for your distribution of choise
 - `xz` for backup compression support
 
 ## Learn more about the project
+- Take a deep dive into code in the [wiki](https://github.com/EarthlySkies/kura5-savehelper/wiki)
 - Report bugs [here](https://github.com/EarthlySkies/kura5-savehelper/labels/bug), but check 
 [this](https://github.com/EarthlySkies/kura5-savehelper/issues/new/choose) first to avoid duplicates
 - Suggest features [here](https://github.com/EarthlySkies/kura5-savehelper/labels/enhancement), but check 
