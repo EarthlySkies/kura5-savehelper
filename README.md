@@ -42,3 +42,4 @@ Please verify the package names for your distribution of choise
 - Suggest features [here](https://github.com/EarthlySkies/kura5-savehelper/labels/enhancement), but check 
 [this](https://github.com/EarthlySkies/kura5-savehelper/issues/new/choose) first to avoid duplicates
 - See who made this project possible in the  [credits](https://github.com/EarthlySkies/kura5-savehelper/blob/main/AUTHORS.md)
+- Worried about vulnerabilities? Check out the [security center](https://github.com/EarthlySkies/kura5-savehelper/security)
