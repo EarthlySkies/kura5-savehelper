@@ -1,7 +1,7 @@
 # Kura5-savehelper
-This helper aims to allow users to avoid the hassle of manual save management for [Kura5](https://chickenhat.itch.io/kura5-bonds-of-the-undying). 
+This program aims to allow users to avoid the hassle of manual save management for [Kura5](https://chickenhat.itch.io/kura5-bonds-of-the-undying). 
 It is written in Python, runs under Python 3 and aims to be cross-platform compatible. 
-The project is open-source software, so feel free to use, copy, modify and redistribute this software under the license terms.
+The project is open-source software, so feel free to use, copy, modify and redistribute it under the license terms.
 
 ## Installation and usage
 1. Download the latest release from the [releases page](https://github.com/EarthlySkies/kura5-savehelper/releases)
@@ -15,9 +15,9 @@ The project is open-source software, so feel free to use, copy, modify and redis
 ### About the program
 
 #### Features
-- Creates backups of your currently active saves
-- Loads backup saves into any save slot
-- Compresses the backup saves to reduce disk usage
+- Create backups of your currently active saves
+- Load backup saves into any save slot
+- Backups are automatically compressed to reduce disk usage
 
 #### Warnings
 - After selecting which save slot to insert a backup save into, the helper will overwrite any active save in that slot without warning
@@ -36,7 +36,7 @@ Please verify the package names for your distribution of choise
 - `xz` for backup compression support
 
 ## Learn more about the project
-- Take a deep dive into code in the [wiki](https://github.com/EarthlySkies/kura5-savehelper/wiki)
+- Take a deep dive into the documentation in the [wiki](https://github.com/EarthlySkies/kura5-savehelper/wiki)
 - Report bugs [here](https://github.com/EarthlySkies/kura5-savehelper/labels/bug), but check 
 [this](https://github.com/EarthlySkies/kura5-savehelper/issues/new/choose) first to avoid duplicates
 - Suggest features [here](https://github.com/EarthlySkies/kura5-savehelper/labels/enhancement), but check 
