@@ -15,7 +15,7 @@ All contributions are also expected to follow these guidelines.
 - All code should follow the [Python Style Guide](https://www.python.org/dev/peps/pep-0008/)
 - Don't comment what is being done. Comment why it is being done
 - Function names are to be written_in_snakecase()
-- Variabe names are to be WrittenInPascalCase
+- Variabe names are to be writtenInCamelCase
 
 ### Submission guidelines
 - Development should mainly take place in the "unstable" branch
