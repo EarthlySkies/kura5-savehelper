@@ -14,6 +14,7 @@ All contributions are also expected to follow these guidelines.
 ### Code style guidelines
 - All code should follow the [Python Style Guide](https://www.python.org/dev/peps/pep-0008/)
 - Don't comment what is being done. Comment why it is being done
+- Functions should be no more than 25 lines in length. If it gets longer, split it up
 - Function names are to be written_in_snakecase()
 - Variabe names are to be writtenInCamelCase
 
