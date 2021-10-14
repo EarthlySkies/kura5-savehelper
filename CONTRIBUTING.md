@@ -13,7 +13,9 @@ All contributions are also expected to follow these guidelines.
 
 ### Code style guidelines
 - All code should follow the [Python Style Guide](https://www.python.org/dev/peps/pep-0008/)
+- Function names should be self-explanatory
 - Don't comment what is being done. Comment why it is being done
+- Documentation should be located inside the wiki, not in the comments
 - Functions should be no more than 25 lines in length. If it gets longer, split it up
 - All input reading should be done via stdin
 - All text output should be done via stdout
