@@ -1,7 +1,7 @@
 This helper aims to allow users to avoid the hassle of manual save management. It is written in Python, runs under Python 3 and aims to be cross-platform compatible. The project is open-source software, so feel free to use, copy, modify and redistribute this software under the license terms.
 
 # Installation and usage
-1. Download the latest release from the releases page
+1. Download the latest release from the [releases page](https://github.com/EarthlySkies/kura5-savehelper/releases)
 2. Extract the contents to your Kura5 game directory
 3. Move "savehelper.py" out of the "savehelper.d" directory
 4. Launch the helper from your file explorer or terminal
