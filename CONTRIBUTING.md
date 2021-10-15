@@ -13,6 +13,7 @@ All contributions are also expected to follow these guidelines.
 
 ### Code style guidelines
 - All code should follow the [Python Style Guide](https://www.python.org/dev/peps/pep-0008/)
+unless it conflicts with the guidelines in this file
 - Function names should be self-explanatory
 - Don't comment what is being done. Comment why it is being done
 - Documentation should be located inside the wiki, not in the comments
@@ -23,6 +24,8 @@ All contributions are also expected to follow these guidelines.
 - Function names are to be written_in_snakecase()
 - Variabe names are to be writtenInCamelCase
 
-### Submission guidelines
-- Development should mainly take place in the "unstable" branch
+### Development and submission guidelines
+- All unfinished code is should be placed into the "staging" branch
+- Code that runs, but is not production ready should be placed into the "unstable" branch
+- All code in "main" is expected to be mostly bug free and production ready
 - All new non-trivial submissions are expected to open an issue before a pull request
