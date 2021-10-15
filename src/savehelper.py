@@ -105,6 +105,8 @@ def get_kura5_version(env: dict):
 def prepare_for_import(env: dict):
     sys.path.insert(0, str(env["Helperdir-path"]))
     return None
+
+
 def main():
     env = {}
     get_current_platform(env)
