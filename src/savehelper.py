@@ -21,12 +21,12 @@ def get_current_platform(env: dict):
 def savehelper_directory_error_handler(missingFile):
     if missingFile == "savehelper.d":
         sys.stderr.write("The 'savehelper.d' directory was not found. It must "
-                         "located in the same directory as the savehelper "
-                         "program.")
+                         "located in the same directory as this helper "
+                         "program. \n")
         sys.exit(2)
     else:
         sys.stderr.write("The '" + missingFile + "' file was not found. It must"
-                         " be located inside the 'savehelper.d' directory.")
+                         " be located inside the 'savehelper.d' directory. \n")
         sys.exit(2)
 
 
@@ -59,7 +59,7 @@ def get_helper_paths(env: dict):
 # Aborts the program
 def kura5_directory_error_handler():
     sys.stderr.write("The current directory was not detected as a valid"
-                     "Kura5 directory.")
+                     "Kura5 directory. \n")
     sys.exit(3)
 
 
@@ -91,9 +91,10 @@ def get_kura5_version(env: dict):
         env["Game-version"] = "Unknown"
         return None
     gameVersion = versionInfo[-1].lstrip('ver')
-    # Insert a decimal point after leading zeroes
+    # To allow version comparison later, we need a proper decimal number
     if gameVersion[0] == "0":
-        gameVersion = gameVersion[:1] + '.' + gameVersion[1:]
+        if gameVersion[1] != ".":
+            gameVersion = gameVersion[:1] + '.' + gameVersion[1:]
     env["Game-version"] = gameVersion
     return None
 
@@ -104,8 +105,6 @@ def get_kura5_version(env: dict):
 def prepare_for_import(env: dict):
     sys.path.insert(0, str(env["Helperdir-path"]))
     return None
-
-
 def main():
     env = {}
     get_current_platform(env)
@@ -119,7 +118,8 @@ def main():
     except ModuleNotFoundError:
         sys.stderr.write("Could not import the savecli module")
         sys.exit(2)
-    # cli.savecli(env)
+    # Commented out until the CLI is ready to roll
+    #cli.savecli(env)
     sys.exit(0)
 
 
