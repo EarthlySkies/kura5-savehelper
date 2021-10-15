@@ -1,1 +1,11 @@
 # This file is a part of the "kura5-savehelper" project
+
+# Preliminary CLI
+# Kura5 Savehelper v. (__version__)
+# Kura5 version ( int / "Unknown" )
+# The following operations are available:
+# 1 - Create a backup copy of a currently active save
+# 2 - Load a backup save into a save slot
+# 3 - Open backup directory in file explorer
+# 0 - Exit
+# Please input your selected operation: 
