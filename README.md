@@ -26,7 +26,7 @@ The project is open-source software, so feel free to use, copy, modify and redis
 #### Locations
 The backup saves will always be located inside the same directory, regardless of Kura5 version
 - On Windows NT -based systems, this will be `%APPDATA%\LocalLow\Kura5 Devs\Kura5\Savehelper`
-- On UNIX-based systems, this will be `~/.config/unity3d/Kura Devs/Kura5/Savehelper`
+- On UNIX-based systems, this will be `~/.config/unity3d/Kura5 Devs/Kura5/Savehelper`
 
 #### Linux dependencies
 Please verify the package names for your distribution of choise
