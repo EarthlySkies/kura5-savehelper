@@ -1,5 +1,7 @@
 # This file is a part of the "kura5-savehelper" project
 
+import libsavehelper as lib
+
 # Preliminary CLI
 # Kura5 Savehelper v. (__version__)
 # Kura5 version ( int / "Unknown" )
