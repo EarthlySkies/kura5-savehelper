@@ -19,6 +19,7 @@ All contributions are also expected to follow these guidelines.
 - Functions should be no more than 25 lines in length. If it gets longer, split it up
 - All input reading should be done via stdin
 - All text output should be done via stdout
+- All errors and warning should be printed via stderr
 - Function names are to be written_in_snakecase()
 - Variabe names are to be writtenInCamelCase
 
