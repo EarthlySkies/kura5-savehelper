@@ -6,41 +6,62 @@ import sys
 
 __version__ = 0.1
 
+
 # Takes the environment variable
 # Returns nothing
 # Does not do error handling
-def get_current_platform(env:dict):
+def get_current_platform(env: dict):
     env["Platform"] = str(platform.system())
     return None
+
+
+# Takes no parameters
+# Returns nothing
+# Aborts the program
+def savehelper_directory_error_handler(missingFile):
+    if missingFile == "savehelper.d":
+        sys.stderr.write("The 'savehelper.d' directory was not found. It must "
+                         "located in the same directory as the savehelper "
+                         "program.")
+        sys.exit(2)
+    else:
+        sys.stderr.write("The '" + missingFile + "' file was not found. It must"
+                         " be located inside the 'savehelper.d' directory.")
+        sys.exit(2)
+
 
 # Takes no parameters
 # Returns nothing
 # Aborts program on error
 def check_savehelper_directory():
     cwdContents = os.listdir(os.getcwd())
-    if "savehelper.d" in cwdContents == False:
-        sys.stderr.write("The 'savehelper.d' directory was not found. It must "
-                         "located in the same directory as the savehelper "
-                         "program.")
-        sys.exit(2)
+    if "savehelper.d" not in cwdContents:
+        savehelper_directory_error_handler("savehelper.d")
     helperdirContents = os.listdir(os.path.abspath("savehelper.d"))
-    if not "savecli.py" in helperdirContents:
-        sys.stderr.write("The 'savecli.py' file was not found. It must be "
-                         "located inside the 'savehelper.d' directory.")
-        sys.exit(2)
-    if not "libsavehelper.py" in helperdirContents:
-        sys.stderr.write("The 'libsavehelper.py' file was not found. It must be"
-                         " located inside the 'savehelper.d' directory.")
-        sys.exit(2)
+    if "savecli.py" not in helperdirContents:
+        savehelper_directory_error_handler("savecli.py")
+    if "libsavehelper.py" not in helperdirContents:
+        savehelper_directory_error_handler("libsavehelper.py")
     return None
+
 
 # Takes the environment variable
 # Returns nothing
 # Does not do error handling
-def get_helper_path(env: dict):
-    # Stores the absolute path where savehelper.py is located
-    env["Helper-path"] = str(os.path.abspath("savehelper.py"))
+def get_helper_paths(env: dict):
+    env["Program-path"] = str(os.path.abspath("savehelper.py"))
+    env["Helperdir-path"] = str(os.path.abspath("savehelper.d"))
     return None
+
+
+# Takes no parameters
+# Returns nothing
+# Aborts the program
+def kura5_directory_error_handler():
+    sys.stderr.write("The current directory was not detected as a valid"
+                     "Kura5 directory.")
+    sys.exit(3)
+
 
 # Takes the environment variable
 # Returns nothing
@@ -48,30 +69,25 @@ def get_helper_path(env: dict):
 def check_if_kura5_directory(env: dict):
     cwdContents = os.listdir(os.getcwd())
     # Locate the Kura5 executable
-        # "Kura5.x86_64" for Linux
+    # "Kura5.x86_64" for Linux
     if env["Platform"] == "Linux":
-        if not "Kura5.x86_64" in cwdContents:
-            sys.stderr.write("The current directory was not detected as a valid"
-                             "Kura5 directory.")
-            sys.exit(3)
+        if "Kura5.x86_64" not in cwdContents:
+            kura5_directory_error_handler()
     if env["Platform"] == "Windows":
-        if not "Kura5.exe" in cwdContents:
-            sys.stderr.write("The current directory was not detected as a valid"
-                             "Kura5 directory.")
-            sys.exit(3)
-    if not "Kura5_Data" in cwdContents:
-        sys.stderr.write("The current directory was not detected as a valid"
-                         "Kura5 directory.")
-        sys.exit(3)
+        if "Kura5.exe" not in cwdContents:
+            kura5_directory_error_handler()
+    if "Kura5_Data" not in cwdContents:
+        kura5_directory_error_handler()
     return None
+
 
 # Takes the environment variable
 # Returns nothing
 # Only warns, does not abort
 def get_kura5_version(env: dict):
-    gamePath = env["Helper-path"]
+    gamePath = env["Program-path"]
     versionInfo = gamePath.split('_')
-    if not "ver" in versionInfo[-1]:
+    if "ver" not in versionInfo[-1]:
         env["Game-version"] = "Unknown"
         return None
     gameVersion = versionInfo[-1].lstrip('ver')
@@ -81,14 +97,20 @@ def get_kura5_version(env: dict):
     env["Game-version"] = gameVersion
     return None
 
+
+# Takes the environment variable
+# Returns nothing
+# Does not do error handling
 def prepare_for_import(env: dict):
-    # Add the "savehelper.d" directory to system path
+    sys.path.insert(0, str(env["Helperdir-path"]))
+    return None
+
 
 def main():
     env = {}
     get_current_platform(env)
     check_savehelper_directory()
-    get_helper_path(env)
+    get_helper_paths(env)
     check_if_kura5_directory(env)
     get_kura5_version(env)
     prepare_for_import(env)
@@ -97,7 +119,8 @@ def main():
     except ModuleNotFoundError:
         sys.stderr.write("Could not import the savecli module")
         sys.exit(2)
-    #cli.savecli(env)
+    # cli.savecli(env)
     sys.exit(0)
+
 
 main()
