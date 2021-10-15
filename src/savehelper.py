@@ -74,7 +74,12 @@ def get_kura5_version(env: dict):
     if not "ver" in versionInfo[-1]:
         env["Game-version"] = "Unknown"
         return None
-    # Continue here
+    gameVersion = versionInfo[-1].lstrip('ver')
+    # Insert a decimal point after leading zeroes
+    if gameVersion[0] == "0":
+        gameVersion = gameVersion[:1] + '.' + gameVersion[1:]
+    env["Game-version"] = gameVersion
+    return None
 
 def prepare_for_import(env: dict):
     # Add the "savehelper.d" directory to system path
