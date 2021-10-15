@@ -65,8 +65,16 @@ def check_if_kura5_directory(env: dict):
         sys.exit(3)
     return None
 
+# Takes the environment variable
+# Returns nothing
+# Only warns, does not abort
 def get_kura5_version(env: dict):
-    # Attempts to read the Kura5 version from the game's parent directory
+    gamePath = env["Helper-path"]
+    versionInfo = gamePath.split('_')
+    if not "ver" in versionInfo[-1]:
+        env["Game-version"] = "Unknown"
+        return None
+    # Continue here
 
 def prepare_for_import(env: dict):
     # Add the "savehelper.d" directory to system path
