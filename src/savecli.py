@@ -1,12 +1,13 @@
-# This file is a part of the "kura5-savehelper" project
+# A part of the "kura5-savehelper" project found on GitHub
+# This file contains the user interface definitions and functions
+# It also acts as the manager for available operations
 
-import sys
 import libsavehelper as lib
+import sys
 
 __version__ = 0.1
 
 
-# Takes no parameters
 # Returns nothing
 # Does not do error handling
 def printcli():
@@ -19,7 +20,6 @@ def printcli():
     return None
 
 
-# Requires environment and operation parameters
 # Returns nothing
 # Does no direct error handling
 def operation_selector(env: dict, operation: str):
@@ -42,7 +42,6 @@ def operation_selector(env: dict, operation: str):
         return None
 
 
-# Requires the environment parameter
 # Returns nothing
 # Handles KeyboardInterrupts
 def startcli(env: dict):
