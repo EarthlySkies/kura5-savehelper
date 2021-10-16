@@ -11,12 +11,12 @@ __version__ = 0.1
 # Returns nothing
 # Does not do error handling
 def printcli():
-    sys.stdout.write("\nThe following operations are available:\n")
-    sys.stdout.write("1 - Create a backup copy of currently active save\n")
-    sys.stdout.write("2 - Load a backed up save into a save slot\n")
-    sys.stdout.write("3 - Open the backup directory in file explorer\n")
-    sys.stdout.write("4 - Delete all backed up saves from the system\n")
-    sys.stdout.write("0 - Exit\n")
+    sys.stdout.write("\nList of available operations\n")
+    sys.stdout.write("1 - Back up a save\n")
+    sys.stdout.write("2 - Load a backed up save\n")
+    sys.stdout.write("3 - Open the backup directory\n")
+    sys.stdout.write("4 - Delete ALL backed up saves \n")
+    sys.stdout.write("0 - Exit")
     return None
 
 
@@ -38,21 +38,21 @@ def operation_selector(env: dict, operation: str):
         lib.request_backup_deletion(env)
         return None
     else:
-        sys.stderr.write("\nInvalid operation requested")
+        sys.stderr.write("Invalid operation requested")
         return None
 
 
 # Returns nothing
 # Handles KeyboardInterrupts
 def startcli(env: dict):
-    sys.stdout.write("Kura5 Savehelper v. " + str(__version__) + "\n")
+    sys.stdout.write("Savehelper v. " + str(__version__) + "\n")
     sys.stdout.write("Kura5 version: " + str(env["Game-version"]))
-    lib.read_backup_directory(env)
+    lib.locate_backup_directory(env)
     while True:
         printcli()
-        sys.stdout.write("Please input your selected operation: ")
+        sys.stdout.write("\nPlease input your selected operation: ")
         try:
-            selectedOperation = sys.stdin.readline()
+            selectedOperation = str(sys.stdin.readline()).rstrip('\n')
         except KeyboardInterrupt:
             sys.exit(0)
         operation_selector(env, selectedOperation)
