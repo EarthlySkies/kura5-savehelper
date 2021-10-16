@@ -34,6 +34,7 @@ Please verify the package names for your distribution of choise
 - `python3` for execution
 - `tar` for archived backup saves
 - `xz` for backup compression support
+- `zip` and `unzip` for importing saves
 
 ## Learn more about the project
 - Take a deep dive into the documentation in the [wiki](https://github.com/EarthlySkies/kura5-savehelper/wiki)
