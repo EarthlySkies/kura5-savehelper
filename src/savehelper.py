@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-# This file is a part of the "kura5-savehelper" project found on GitHub
+# A part of the "kura5-savehelper" project found on GitHub
+# This file acts as the initializer for the program
+# It gathers the necessary information for the helper to work
+# It does not do any direct file operations or deal with I/O
 
 import os
 import platform
 import sys
 
 __version__ = 0.1
-
-
 # Returns nothing
 # Does not do error handling
 def get_current_platform(env: dict):
