@@ -82,12 +82,12 @@ def check_if_kura5_directory(env: dict):
 # Returns nothing
 # Does not do error handling
 def get_kura5_version(env: dict):
-    gamePath = env["Program-path"]
+    gamePath = str(env["Program-path"]).rstrip('/savehelper.py')
     versionInfo = gamePath.split('_')
     if "ver" not in versionInfo[-1]:
         env["Game-version"] = "Unknown"
         return None
-    gameVersion = versionInfo[-1].lstrip('ver')
+    gameVersion = str(versionInfo[-1]).lstrip('ver')
     # To allow version comparison later, we need a proper decimal number
     if gameVersion[0] == "0":
         if gameVersion[1] != ".":
