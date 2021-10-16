@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# This file is a part of the "kura5-savehelper" project
+# This file is a part of the "kura5-savehelper" project found on GitHub
+
 import os
 import platform
 import sys
@@ -7,7 +8,6 @@ import sys
 __version__ = 0.1
 
 
-# Takes the environment variable
 # Returns nothing
 # Does not do error handling
 def get_current_platform(env: dict):
@@ -15,7 +15,6 @@ def get_current_platform(env: dict):
     return None
 
 
-# Takes no parameters
 # Returns nothing
 # Aborts the program
 def savehelper_directory_error_handler(missingFile):
@@ -30,7 +29,6 @@ def savehelper_directory_error_handler(missingFile):
         sys.exit(2)
 
 
-# Takes no parameters
 # Returns nothing
 # Aborts program on error
 def check_savehelper_directory():
@@ -45,7 +43,6 @@ def check_savehelper_directory():
     return None
 
 
-# Takes the environment variable
 # Returns nothing
 # Does not do error handling
 def get_helper_paths(env: dict):
@@ -54,7 +51,6 @@ def get_helper_paths(env: dict):
     return None
 
 
-# Takes no parameters
 # Returns nothing
 # Aborts the program
 def kura5_directory_error_handler():
@@ -63,7 +59,6 @@ def kura5_directory_error_handler():
     sys.exit(3)
 
 
-# Takes the environment variable
 # Returns nothing
 # Abort program on error
 def check_if_kura5_directory(env: dict):
@@ -81,9 +76,8 @@ def check_if_kura5_directory(env: dict):
     return None
 
 
-# Takes the environment variable
 # Returns nothing
-# Only warns, does not abort
+# Does not do error handling
 def get_kura5_version(env: dict):
     gamePath = env["Program-path"]
     versionInfo = gamePath.split('_')
@@ -99,7 +93,6 @@ def get_kura5_version(env: dict):
     return None
 
 
-# Takes the environment variable
 # Returns nothing
 # Does not do error handling
 def prepare_for_import(env: dict):
@@ -120,8 +113,7 @@ def main():
     except ModuleNotFoundError:
         sys.stderr.write("Could not import the savecli module")
         sys.exit(2)
-    # Commented out until the CLI is ready to roll
-    #cli.savecli(env)
+    cli.startcli(env)
     sys.exit(0)
 
 
