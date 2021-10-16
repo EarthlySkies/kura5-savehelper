@@ -9,6 +9,8 @@ import platform
 import sys
 
 __version__ = 0.1
+
+
 # Returns nothing
 # Does not do error handling
 def get_current_platform(env: dict):
