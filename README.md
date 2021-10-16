@@ -31,7 +31,8 @@ The backup saves will always be located inside the same directory, regardless of
 #### Linux dependencies
 Please verify the package names for your distribution of choise
 - `coreutils` for file, directory and permissions management
-- `python3` for execution
+- `xdg-utils` for file explorer usage
+- `python3` for script execution
 - `tar` for archived backup saves
 - `xz` for backup compression support
 - `zip` and `unzip` for importing saves
