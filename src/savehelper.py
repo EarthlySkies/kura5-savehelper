@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-# This file is a part of the "kura5-savehelper" project
+# A part of the "kura5-savehelper" project found on GitHub
+# This file acts as the initializer for the program
+# It gathers the necessary information for the helper to work
+# It does not do any direct file operations or deal with I/O
+
 import os
 import platform
 import sys
@@ -7,7 +11,6 @@ import sys
 __version__ = 0.1
 
 
-# Takes the environment variable
 # Returns nothing
 # Does not do error handling
 def get_current_platform(env: dict):
@@ -15,7 +18,6 @@ def get_current_platform(env: dict):
     return None
 
 
-# Takes no parameters
 # Returns nothing
 # Aborts the program
 def savehelper_directory_error_handler(missingFile):
@@ -30,7 +32,6 @@ def savehelper_directory_error_handler(missingFile):
         sys.exit(2)
 
 
-# Takes no parameters
 # Returns nothing
 # Aborts program on error
 def check_savehelper_directory():
@@ -45,7 +46,6 @@ def check_savehelper_directory():
     return None
 
 
-# Takes the environment variable
 # Returns nothing
 # Does not do error handling
 def get_helper_paths(env: dict):
@@ -54,7 +54,6 @@ def get_helper_paths(env: dict):
     return None
 
 
-# Takes no parameters
 # Returns nothing
 # Aborts the program
 def kura5_directory_error_handler():
@@ -63,7 +62,6 @@ def kura5_directory_error_handler():
     sys.exit(3)
 
 
-# Takes the environment variable
 # Returns nothing
 # Abort program on error
 def check_if_kura5_directory(env: dict):
@@ -81,16 +79,15 @@ def check_if_kura5_directory(env: dict):
     return None
 
 
-# Takes the environment variable
 # Returns nothing
-# Only warns, does not abort
+# Does not do error handling
 def get_kura5_version(env: dict):
-    gamePath = env["Program-path"]
+    gamePath = str(env["Program-path"]).rstrip('/savehelper.py')
     versionInfo = gamePath.split('_')
     if "ver" not in versionInfo[-1]:
         env["Game-version"] = "Unknown"
         return None
-    gameVersion = versionInfo[-1].lstrip('ver')
+    gameVersion = str(versionInfo[-1]).lstrip('ver')
     # To allow version comparison later, we need a proper decimal number
     if gameVersion[0] == "0":
         if gameVersion[1] != ".":
@@ -99,7 +96,6 @@ def get_kura5_version(env: dict):
     return None
 
 
-# Takes the environment variable
 # Returns nothing
 # Does not do error handling
 def prepare_for_import(env: dict):
@@ -120,8 +116,7 @@ def main():
     except ModuleNotFoundError:
         sys.stderr.write("Could not import the savecli module")
         sys.exit(2)
-    # Commented out until the CLI is ready to roll
-    #cli.savecli(env)
+    cli.startcli(env)
     sys.exit(0)
 
 
