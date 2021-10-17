@@ -196,6 +196,7 @@ def request_backup_deletion(env):
 # Returns nothing in all cases
 def open_file_explorer(env: dict):
     sys.stdout.write("Opening file explorer in a separate window... ")
+    sys.stdout.write("\n" + str(env["Backupdir-path"]))
     if env["Platform"] == "Windows":
         subprocess.Popen(['explorer', env["Backupdir-path"]])
         sys.stdout.write("Done")
