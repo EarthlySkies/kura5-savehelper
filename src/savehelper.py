@@ -58,7 +58,7 @@ def get_important_paths(env: dict):
 # Returns nothing
 # Aborts the program
 def kura5_directory_error_handler():
-    sys.stderr.write("The current directory was not detected as a valid"
+    sys.stderr.write("The current directory was not detected as a valid "
                      "Kura5 directory. \n")
     sys.exit(3)
 
