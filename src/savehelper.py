@@ -48,9 +48,10 @@ def check_savehelper_directory():
 
 # Returns nothing
 # Does not do error handling
-def get_helper_paths(env: dict):
+def get_important_paths(env: dict):
     env["Program-path"] = str(os.path.abspath("savehelper.py"))
     env["Helperdir-path"] = str(os.path.abspath("savehelper.d"))
+    env["Gamedatadir-path"] = str(os.path.abspath("Kura5_Data"))
     return None
 
 
@@ -107,7 +108,7 @@ def main():
     env = {}
     get_current_platform(env)
     check_savehelper_directory()
-    get_helper_paths(env)
+    get_important_paths(env)
     check_if_kura5_directory(env)
     get_kura5_version(env)
     prepare_for_import(env)
