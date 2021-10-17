@@ -32,7 +32,7 @@ def does_kura5devsdir_exist(env: dict):
 # TODO: add function description
 def fetch_backupdir_abspath(env: dict):
     if env["Platform"] == "Windows":
-        backupdirAbspath = os.path.expandvars("%userprofile%\\AppData\\LocalLow
+        backupdirAbspath = os.path.expandvars("%userprofile%\\AppData\\LocalLow"
                                               "\\Kura5 Devs\\Kura5\\"
                                               "Savehelper\\")
         return backupdirAbspath
