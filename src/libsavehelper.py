@@ -24,7 +24,7 @@ def fetch_kura5devsdir_abspath(env: dict):
 def does_kura5devsdir_exist(env: dict):
     kura5DevsDirAbspath = fetch_kura5devsdir_abspath(env)
     if not os.path.exists(kura5DevsDirAbspath):
-        sys.stderr.write("\nLaunch Kura5 before using this utility")
+        sys.stderr.write("\nLaunch Kura5 before using this utility\n")
         sys.exit(3)
     return None
 
@@ -155,22 +155,45 @@ def load_backup_save(env: dict):
     return None
 
 
-# TODO: add function description
+# Function: initiate_backup_deletion
+# The aim: delete all currently existing backup saves in the storage directory
+def initiate_backup_deletion(env: dict):
+    # Grab the backup directory path
+    # List all files in the backup directory
+    # Grab the abspath of each item individually
+    # Delete each item individually
+    # Remove the backup directory
+    sys.stderr.write("\nThe deletion code is not ready yet")
+    return None
+
+
+# Function: request_backup_deletion
+# The aim: act as a front-end for initiate_backup_deletion
+# Asks the user to type in a confirmation phrase to proceed with the deletion
+# Does not do any direct error handling
+# If user confirms, calls the initiate_backup_deletion function
+# Requires the environment variable to pass it on to the actual deleter
+# Returns None in all cases
 def request_backup_deletion(env):
     sys.stdout.write("\nWARNING: This operation will delete ALL currently "
                      "stored backup saves.")
     sys.stdout.write("\nPlease type in uppercase YES to continue: ")
     deleteSaves = str(sys.stdin.readline()).rstrip('\n')
     if deleteSaves == "YES":
-        # TODO: write the deletor code
-        sys.stderr.write("\nThe deletion code is not ready yet")
+        initiate_backup_deletion(env)
         return None
     else:
         sys.stdout.write("Deletion aborted. No files were touched.")
     return None
 
 
-# TODO: add function description
+# Function: open_file_explorer
+# The aim: open the save storage directory with a native file explorer
+# The explorer is launched as an independent subprocess in a separate window
+# Prints a warning if run on an unsupported platform
+# Does not call any other function
+# Requires the environment variable to get the platform type
+# Returns nothing in all cases
 def open_file_explorer(env: dict):
     sys.stdout.write("Opening file explorer in a separate window... ")
     if env["Platform"] == "Windows":
