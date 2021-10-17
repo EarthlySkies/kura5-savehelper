@@ -34,7 +34,7 @@ def fetch_backupdir_abspath(env: dict):
     if env["Platform"] == "Windows":
         backupdirAbspath = os.path.expandvars("%userprofile%\\AppData\\LocalLow"
                                               "\\Kura5 Devs\\Kura5\\"
-                                              "Savehelper\\")
+                                              "Savehelper")
         return backupdirAbspath
     if env["Platform"] == "Linux" or "Darwin":
         backupdirAbspath = os.path.expanduser("~/.config/unity3d/Kura5 Devs"
