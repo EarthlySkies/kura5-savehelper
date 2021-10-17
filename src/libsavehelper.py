@@ -8,12 +8,6 @@ import sys
 
 
 # TODO: add function description
-def create_backup_directory(env: dict):
-    # TODO: create the function code
-    return None
-
-
-# TODO: add function description
 def fetch_backupdir_abspath(env: dict):
     if env["Platform"] == "Windows":
         backupdirAbspath = os.path.abspath("%APPDATA%/LocalLow/Kura5 Devs"
@@ -25,6 +19,12 @@ def fetch_backupdir_abspath(env: dict):
         return backupdirAbspath
 
 
+# TODO: add function description
+def create_backup_directory(env: dict):
+    # TODO: create the function code
+    pathToCreate = (fetch_backupdir_abspath(env))
+    os.mkdir(pathToCreate)
+    return None
 # TODO: add function description
 def does_backupdir_exist(env: dict):
     backupdirPath = fetch_backupdir_abspath(env)
@@ -38,8 +38,6 @@ def get_backupdir_path(env: dict):
     backupdirPath = fetch_backupdir_abspath(env)
     env["Backupdir-path"] = backupdirPath
     return None
-
-
 # TODO: add function description
 def locate_backup_directory(env: dict):
     if not does_backupdir_exist(env):
