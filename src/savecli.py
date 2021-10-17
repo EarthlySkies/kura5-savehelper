@@ -11,7 +11,8 @@ __version__ = 0.1
 # Returns nothing
 # Does not do error handling
 def printcli():
-    sys.stdout.write("\nList of available operations\n")
+    sys.stdout.write("\n***********************************\n")
+    sys.stdout.write("List of available operations\n")
     sys.stdout.write("1 - Back up a save\n")
     sys.stdout.write("2 - Load a backed up save\n")
     sys.stdout.write("3 - Open the backup directory\n")
@@ -38,7 +39,7 @@ def operation_selector(env: dict, operation: str):
         lib.request_backup_deletion(env)
         return None
     else:
-        sys.stderr.write("Invalid operation requested")
+        sys.stderr.write("\nInvalid operation requested")
         return None
 
 
