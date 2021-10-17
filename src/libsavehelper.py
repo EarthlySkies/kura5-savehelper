@@ -25,6 +25,8 @@ def create_backup_directory(env: dict):
     pathToCreate = (fetch_backupdir_abspath(env))
     os.mkdir(pathToCreate)
     return None
+
+
 # TODO: add function description
 def does_backupdir_exist(env: dict):
     backupdirPath = fetch_backupdir_abspath(env)
@@ -38,6 +40,8 @@ def get_backupdir_path(env: dict):
     backupdirPath = fetch_backupdir_abspath(env)
     env["Backupdir-path"] = backupdirPath
     return None
+
+
 # TODO: add function description
 def locate_backup_directory(env: dict):
     if not does_backupdir_exist(env):
@@ -59,20 +63,21 @@ def create_new_backup_save(env: dict):
     # Rename the working copy
     # If possible, add the Kura5 version to it
     # Move the new backup save to storage
+    sys.stderr.write("\nThe backup creator code is not ready yet.")
     return None
 
 
 # TODO: add function description
 def load_backup_save(env: dict):
     # TODO: Create the function code
+    sys.stderr.write("\nThe loader code is not ready yet")
     return None
 
 
 # TODO: add function description
 def request_backup_deletion(env):
-    sys.stdout.write("\nWARNING: This operation will delete all currently "
+    sys.stdout.write("\nWARNING: This operation will delete ALL currently "
                      "stored backup saves.")
-    sys.stdout.write("\n-----------------------------------------")
     sys.stdout.write("\nPlease type in uppercase YES to continue: ")
     deleteSaves = str(sys.stdin.readline()).rstrip('\n')
     if deleteSaves == "YES":
