@@ -5,10 +5,11 @@ The project is open-source software, so feel free to use, copy, modify and redis
 
 ## Installation and usage
 1. Download the latest release from the [releases page](https://github.com/EarthlySkies/kura5-savehelper/releases)
-2. Extract the contents to your Kura5 game directory
-3. Move the "savehelper.py" out of the "savehelper.d" directory
-4. Launch the helper from your file explorer or terminal
-5. The program is now running and will ask you what you want to do
+2. Extract the contents to of the release package
+3. Transfer the "savehelper.d" directory to your Kura5 folder 
+4. Move the "savehelper.py" out of the "savehelper.d" directory
+5. Launch the helper from your file explorer or terminal
+6. The program is now running and will ask you what you want to do
 
 ---
 
