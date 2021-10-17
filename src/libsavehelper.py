@@ -11,8 +11,8 @@ import sys
 # Consider possible merger with fetch_backupdir_abspath
 def fetch_kura5devsdir_abspath(env: dict):
     if env["Platform"] == "Windows":
-        kura5DevsDir = os.path.expandvars("%userprofile%/AppData/LocalLow/Kura5"
-                                          " Devs/Kura5")
+        kura5DevsDir = os.path.expandvars("%userprofile%\\AppData\\LocalLow\\"
+                                          "Kura5 Devs\\Kura5")
         return kura5DevsDir
     if env["Platform"] == "Linux" or "Darwin":
         kura5DevsDir = os.path.expanduser("~/.config/unity3d/Kura5 Devs/Kura5")
@@ -32,8 +32,8 @@ def does_kura5devsdir_exist(env: dict):
 # TODO: add function description
 def fetch_backupdir_abspath(env: dict):
     if env["Platform"] == "Windows":
-        backupdirAbspath = os.path.expandvars("%userprofile%/AppData/LocalLow/"
-                                              "Kura5 Devs/Kura5/Savehelper")
+        backupdirAbspath = os.path.expandvars("%userprofile%\\AppData\\LocalLow\\"
+                                              "Kura5 Devs\\Kura5")
         return backupdirAbspath
     if env["Platform"] == "Linux" or "Darwin":
         backupdirAbspath = os.path.expanduser("~/.config/unity3d/Kura5 Devs"
