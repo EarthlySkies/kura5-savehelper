@@ -3,6 +3,12 @@ This program aims to allow users to avoid the hassle of manual save management f
 It is written in Python, runs under Python 3 and aims to be cross-platform compatible. 
 The project is open-source software, so feel free to use, copy, modify and redistribute it under the license terms.
 
+# IMPORTANT
+Due to the upcoming changes of the save file system in the next Kura5 update, the project will halted for a while.
+Save files will be suffled around and a system-wide standard location will be utilized. (Confirmed by the Kura5 Team.)
+I will make the necessary changes when the next update is around the corner and make a working release.
+Until then, I very much doubt I will finish the current version due it's upcoming breakage.
+
 ## Installation and usage
 1. Download the latest release from the [releases page](https://github.com/EarthlySkies/kura5-savehelper/releases)
 2. Extract the contents of the release package
